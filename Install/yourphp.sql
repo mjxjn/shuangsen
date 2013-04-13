@@ -140,7 +140,7 @@ CREATE TABLE `yourphp_dbsource` (
   `dbname` varchar(50) NOT NULL  DEFAULT '',
   `dbtablepre` varchar(30) NOT NULL  DEFAULT '',
   PRIMARY KEY (`id`)
-) TYPE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 --
 -- 表的结构 `yourphp_download`
 -- 
