@@ -4,7 +4,7 @@ body {line-height:22px;font-size:12px;font-family:arial,"\5B8B\4F53";color:#666;
 
 img {vertical-align:middle; border:none;}
 a {color:#666;text-decoration:none;outline:none;blr:expression(this.onFocus=this.blur());}
-a:hover, a:active, a:focus {color:#f60;}
+a:hover, a:active, a:focus {color:#398ffa;}
 input,button,select,textarea{outline:none}
 textarea{resize:none}
 
@@ -46,7 +46,7 @@ h3{ font-size:16px; line-height:30px;}
 #headerbg{ background:#fff; height:74px; border-bottom:1px solid #dbdbdb;}
 #header{ margin:0 auto; width:950px; height:74px;}
 
-#logo{ float:left; width:120px; height:74px; overflow:hidden; line-height:74px; display:block; background:url(../images/logo.png) no-repeat 50%; text-indent:120px;}
+#logo{ float:left; width:202px; height:74px; overflow:hidden; line-height:74px; display:block; background:url(../images/logo.gif) no-repeat 50%; text-indent:120px;}
 
 #lang{ float:right; padding-top:38px; line-height:18px; height:18px;}
 #lang a{ color:#888; background:url(../images/icon_org.jpg) no-repeat 0 50%; padding:2px 0 2px 12px; margin-left:20px;}
@@ -65,7 +65,7 @@ h3{ font-size:16px; line-height:30px;}
 /*Top level list items*/
 .ddsmoothmenu ul li{position: relative;display: inline;float: left;}
 .ddsmoothmenu ul li.sel{background:url(../images/navigation.jpg) no-repeat 50% 100%;}
-.ddsmoothmenu ul li.sel>a{ color:#ff6600;}
+.ddsmoothmenu ul li.sel>a{ color:#398ffa;}
 
 
 /*Top level menu link items style*/
@@ -75,7 +75,7 @@ h3{ font-size:16px; line-height:30px;}
 
 .ddsmoothmenu ul li a:link, .ddsmoothmenu ul li a:visited{}
 
-.ddsmoothmenu ul li a.selected,.ddsmoothmenu ul li a:hover{ background:#f96706 url(../images/nav_a_hover.jpg) repeat-x 0 0;color: white;}
+.ddsmoothmenu ul li a.selected,.ddsmoothmenu ul li a:hover{ background:#398ffa;color: white;}
 	
 /*1st sub level menu*/
 .ddsmoothmenu ul li ul{position: absolute;left: 0;display: none;visibility: hidden;}
@@ -130,7 +130,7 @@ opacity: 0.6;
 }
 
 /* -- 橙条 -- */
-#hr{ height:2px; background:#f60; clear:both; font-size:0;}
+#hr{ height:2px; background:#398ffa; clear:both; font-size:0;}
 
 /* -- 内容框架 -- */
 .container_bg{ background:url(../images/container_bg.jpg) repeat-x 0 0;}
@@ -209,13 +209,13 @@ opacity: 0.6;
 .news_more:hover{ color:#fff; background:url(../images/home_news_more.jpg) no-repeat 100% 0;}
 
 .news_details{ padding-right:10px; background:url(../images/home_news_details.jpg) no-repeat 100% -8px; cursor:pointer; color:#0050b4;}
-.news_details:hover{ color:#f60;background-position:100% -38px;}
+.news_details:hover{ color:#1492d3;background-position:100% -38px;}
 
 .server_fb,.server_fq{ background:url(../images/servers_icon.jpg) no-repeat 2px 0; padding:3px 0 3px 30px; line-height:36px; color:#0050b4;}
 .server_fq{ background-position:2px -36px;}
 
 .home_news_line{ height:1px; background:#dbdbdb; font-size:0;}
-.home_news_line div{ height:1px; width:100px; background:#f60; font-size:0;}
+.home_news_line div{ height:1px; width:100px; background:#1492d3; font-size:0;}
 .title_s{ height:30px; overflow:hidden; line-height:30px; clear:both;}
 .title_s h3{ font-size:14px; color:#000; float:left; display:block;}
 
