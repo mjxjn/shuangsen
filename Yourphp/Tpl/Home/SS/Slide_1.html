@@ -1,0 +1,24 @@
+<div id="imageShow">
+<div id="imgshow_mask"></div>
+  <ul class="imagebg" id="imagebg">
+{loop}
+    <li class="bannerbg" data-sPic="{$r['small']}">
+    	<div class="bannerbg_1" style="background:url(/browser/images/home/index_newlogo_left.jpg) repeat-x 0 0;"></div>
+        <div class="bannerbg_2" style="background:url(/browser/images/home/index_newlogo_right.jpg) repeat-x 0 0;"></div>
+        <div class="bannerbg_main" style="background:url({$r['pic']}) center no-repeat; cursor:pointer;" onclick="javascript:location.href='{$r.link}'"><div class="banner"></div></div>
+    </li>
+{/loop}
+  </ul>
+  <div class="scrollbg">
+    <div class="scroll"> <a id="left_img_btn" class="s_pre" href="javascript:void(0)"></a>
+      <div class="current" id="current"></div>
+      <div class="outScroll_pic">
+        <ul class="scroll_pic cls" id="small_pic">
+            {loop}
+            <li onclick="img.play({$flashid})" class=""><img src="{$r['small']}" width="145" height="65"></li>
+            {/loop}
+        </ul>
+      </div>
+      <a id="right_img_btn" class="s_next" href="javascript:void(0)"></a> </div>
+  </div>
+</div>

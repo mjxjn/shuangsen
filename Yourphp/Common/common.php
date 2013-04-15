@@ -273,6 +273,13 @@ function toDate($time, $format = 'Y-m-d H:i:s') {
 	$format = str_replace ( '#', ':', $format );
 	return date ($format, $time );
 }
+function MDate($time, $format = 'Y-m-d') {
+	if (empty ( $time )) {
+		return '';
+	}
+	$format = str_replace ( '#', ':', $format );
+	return date ($format, $time );
+}
 function savecache($name = '',$id='') {
 	unlink(RUNTIME_FILE);
 	$Model = M ( $name );
