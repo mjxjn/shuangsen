@@ -133,8 +133,8 @@ opacity: 0.6;
 #hr{ height:2px; background:#398ffa; clear:both; font-size:0;}
 
 /* -- 内容框架 -- */
-.container_bg{ background:url(../images/container_bg.jpg) repeat-x 0 0;}
-.container{ width:950px; margin:0 auto;}
+.container_bg{ background:url(../images/container_bg.jpg) #F2F2F2 repeat-x 0 0; padding-bottom: 25px}
+.container{ width:950px; margin:0 auto 25px;}
 
 /*--子导航--*/
 .subnav {padding: 14px 0; height: 23px;overflow: hidden;}
@@ -142,6 +142,9 @@ opacity: 0.6;
 .subnav li {display: inline;padding-left: 15px;}
 .subnav li.lj { width:5px; padding-left:15px; border-right:1px solid #dbdbdb; margin-right:-2px;}
 .subnav .selected a {color: #f60;}
+
+.subnav a.navs{color:#5AB0DD; font-size: 14px; }
+.subnav a.subnavs{ font-size: 14px; }
 
 
 /* -- 圆角模块 -- */
@@ -200,7 +203,7 @@ opacity: 0.6;
 .web_map_btn_show{ background-repeat:50% 100%;}
 
 /*-- 页脚 --*/
-#footerbg {background:#d6d6d6; clear:both; margin-top:25px;}
+#footerbg {background:#d6d6d6; clear:both; }
 #footer {width:950px;text-align:center; margin:0 auto;}
 #footer p {padding:25px 0 0; height:60px;}
 

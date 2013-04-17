@@ -1,0 +1,44 @@
+<link rel="stylesheet" type="text/css" href="../Public/css/ss.css" />
+<div class="container_bg">
+<div class="container">
+  <div class="subnav clearfix" style="padding-bottom:12px; border-bottom: 1px #d2d2d2 dashed ">
+      <a href="{:URL()}" class="navs">{:L(home_font)}</a> &gt <YP:catpos  catid="catid" space=" &gt; " />
+  </div>
+
+  <div class="news_padding">
+
+  <div class="w245 fr">
+  <div class="hot_news_title"><h3 class="orange">热门公司动态</h3></div>
+  <ul class="hot_news_list">
+      <YP:list name="Article" order="id desc" catid="T[m_news_catid]" posid="5" limit="5">
+    <li><a href="{$r.url}">{$r.title}</a> - {$r.createtime|toDate=###,'Y-m-d'}</li>
+    </YP:list> 
+  </ul>
+  </div>
+  
+  <div class="w670 fl">
+    <div class="breadcrumb"></div>
+    <!-- quad -->
+    <div class="news-list">
+        <ul>
+            <volist name="list" id="r">
+<li>
+          	<p class="datetime"><strong>{$r.createtime|toDate=###,'Y'}</strong><br>{$r.createtime|toDate=###,'m,d'}</p>
+            <p class="img"><a href="{$r.url}" target="_blank"><img src="{$r.thumb}"></a></p>
+            <div class="cnt">
+              <h4><a href="{$r.url}" target="_blank"><b>{$r.title}</b></a></h4>
+              <p class="summary">{$r.description}</p><a class="news_more" href="{$r.url}">详情</a>
+            </div>
+          </li>
+          </volist> 
+        </ul>
+      </div>
+  </div>
+  </div>
+  
+  <div class="page">
+	{$pages}
+  </div>
+  
+</div>
+</div>

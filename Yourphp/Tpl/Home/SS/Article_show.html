@@ -1,0 +1,55 @@
+<link rel="stylesheet" type="text/css" href="../Public/css/ss.css" />
+<div class="container_bg">
+<div class="container">
+  <div class="subnav clearfix" style="padding-bottom:12px; border-bottom: 1px #d2d2d2 dashed">
+      <a href="{:URL()}" class="navs">{:L(home_font)}</a> &gt <YP:catpos  catid="catid" space=" &gt; " />
+  </div>
+
+  <div class="news_padding">
+
+  <div class="w245 fr">
+  <div class="hot_news_title"><h3 class="orange">热门公司动态</h3></div>
+  <ul class="hot_news_list">
+      <YP:list name="Article" order="id desc" catid="T[m_news_catid]" posid="5" limit="5">
+    <li><a href="{$r.url}">{$r.title}</a> - {$r.createtime|toDate=###,'Y-m-d'}</li>
+    </YP:list> 
+  </ul>
+  </div>
+  
+  <div class="w670 fl">
+    <div class="breadcrumb"></div>
+    <!-- quad -->
+    <div class="news-detail">
+    	<div class="news_detail_top">
+		<h1>{$title}</h1>
+		<p class="datetime"><span>{:L(time)}: {$createtime|toDate}</span> <span>{:L(copyfrom)}: {if  $copyfrom}{$copyfrom}{else}{$site_name}{/if}</span></p>
+                <!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<span class="bds_more">分享到：</span>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_qzone"></a>
+<a class="bds_tqf"></a>
+<a class="bds_renren"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6453049" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END --></p>
+        </div>
+        <div class="clear"></div>
+	 <div class="content">
+	 	<div class="richtext">
+                {$content}
+                </div>
+             <div id="pages" class="page">{$pages}</div>
+        
+        </div>                                  
+  </div>
+  </div>
+  </div>
+  
+</div>
+</div>

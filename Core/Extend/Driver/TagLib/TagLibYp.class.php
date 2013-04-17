@@ -309,7 +309,7 @@ class TagLibYp extends TagLib
 			if(!isset($category_arr[$catid])) return '';
 			$arrparentid = array_filter(explode(',', $category_arr[$catid]['arrparentid'].','.$catid));
 			foreach($arrparentid as $cid) {
-				$parsestr[] = '<a href="'.$category_arr[$cid]['url'].'">'.$category_arr[$cid]['catname'].'</a>';
+				$parsestr[] = '<a href="'.$category_arr[$cid]['url'].'" class="subnavs">'.$category_arr[$cid]['catname'].'</a>';
 			}unset($category_arr);
 			return implode($space,$parsestr);
 		}else{
@@ -317,7 +317,7 @@ class TagLibYp extends TagLib
 			$parsestr  = '';
 			$parsestr .= '<?php  $arrparentid = array_filter(explode(\',\', $Categorys[$'.$tag['catid'].'][\'arrparentid\'].\',\'.$'.$tag['catid'].'));';
 			$parsestr .= 'foreach($arrparentid as $cid):';
-			$parsestr .= '$parsestr[] = \'<a href="\'.$Categorys[$cid][\'url\'].\'">\'.$Categorys[$cid][\'catname\'].\'</a>\';?>';
+			$parsestr .= '$parsestr[] = \'<a href="\'.$Categorys[$cid][\'url\'].\'" class="subnavs">\'.$Categorys[$cid][\'catname\'].\'</a>\';?>';
 			$parsestr .= '<?php endforeach;echo implode("'.$space.'",$parsestr);?>';
 			return  $parsestr;
 		}
