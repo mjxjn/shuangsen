@@ -8,28 +8,27 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-// $Id$
+// $Id: Page.class.php 2601 2012-01-15 04:59:14Z liu21st $
 
-class Page extends Think {
-    // 起始行数
-    public $firstRow	;
-    // 列表每页显示行数
-    public $listRows	;
+class Page {
+    // 分页栏每页显示的页数
+    public $rollPage = 5;
     // 页数跳转时要带的参数
     public $parameter  ;
+    // 默认列表每页显示行数
+    public $listRows = 20;
+    // 起始行数
+    public $firstRow	;
     // 分页总页面数
-    public $totalPages  ;
+    protected $totalPages  ;
     // 总行数
-    public $totalRows  ;
+    protected $totalRows  ;
     // 当前页数
-    public $nowPage    ;
+    protected $nowPage    ;
     // 分页的栏的总页数
-    public $coolPages   ;
-    // 分页栏每页显示的页数
-    public $rollPage   ;
-	// 分页url定制
-	public $urlrule;
- 
+    protected $coolPages   ;
+    // 分页显示定制
+    protected $config  =	array('header'=>'条记录','prev'=>'上一页','next'=>'下一页','first'=>'第一页','last'=>'最后一页','theme'=>' %totalRow% %header% %nowPage%/%totalPage% 页 %upPage% %downPage% %first%  %prePage%  %linkPage%  %nextPage% %end%');
 
     /**
      +----------------------------------------------------------
@@ -42,115 +41,97 @@ class Page extends Think {
      * @param array $parameter  分页跳转的参数
      +----------------------------------------------------------
      */
-    public function __construct($totalRows,$listRows,$p='') {
+    public function __construct($totalRows,$listRows='',$parameter='') {
         $this->totalRows = $totalRows;
         $this->parameter = $parameter;
-        $this->rollPage = C('PAGE_ROLLPAGE') ? C('PAGE_ROLLPAGE') : 2;
-        $this->listRows = !empty($listRows)?$listRows:C('PAGE_LISTROWS');
+        if(!empty($listRows)) {
+            $this->listRows = intval($listRows);
+        }
         $this->totalPages = ceil($this->totalRows/$this->listRows);     //总页数
-		if (!define('PAGESTOTAL')) define('PAGESTOTAL', $this->totalPages);
         $this->coolPages  = ceil($this->totalPages/$this->rollPage);
-		if($p){
-			$this->nowPage =$p;
-			}else{
-			$this->nowPage  = !empty($_GET[C('VAR_PAGE')])?intval($_GET[C('VAR_PAGE')]):1;
-		}
+        $this->nowPage  = !empty($_GET[C('VAR_PAGE')])?intval($_GET[C('VAR_PAGE')]):1;
         if(!empty($this->totalPages) && $this->nowPage>$this->totalPages) {
             $this->nowPage = $this->totalPages;
         }
         $this->firstRow = $this->listRows*($this->nowPage-1);
     }
- 
-	public function  show(){
 
-		if($this->totalRows == 0 OR $this->listRows == 0 OR $this->totalPages <= 1){
-			return '';
-		}
-		$urlrule =  str_replace('%7B%24page%7D','{$page}',$this->urlrule); //urldecode	
-		if(!$urlrule){		
-			$p = C('VAR_PAGE');			
-			$nowCoolPage      = ceil($this->nowPage/$this->rollPage);
-			$url  =  $_SERVER['REQUEST_URI'].(strpos($_SERVER['REQUEST_URI'],'?')?'':"?").$this->parameter;
-			$parse = parse_url($url);
-			if(isset($parse['query'])) {
-				parse_str($parse['query'],$params);
-				unset($params[$p]);
-				$urlrule   =  $parse['path'].'?'.http_build_query($params);
-			}
-			$urlrule = $urlrule."&".$p.'={$page}';
-		}
+    public function setConfig($name,$value) {
+        if(isset($this->config[$name])) {
+            $this->config[$name]    =   $value;
+        }
+    }
 
+    /**
+     +----------------------------------------------------------
+     * 分页显示输出
+     +----------------------------------------------------------
+     * @access public
+     +----------------------------------------------------------
+     */
+    public function show() {
+        if(0 == $this->totalRows) return '';
+        $p = C('VAR_PAGE');
+        $nowCoolPage      = ceil($this->nowPage/$this->rollPage);
+        $url  =  $_SERVER['REQUEST_URI'].(strpos($_SERVER['REQUEST_URI'],'?')?'':"?").$this->parameter;
+        $parse = parse_url($url);
+        if(isset($parse['query'])) {
+            parse_str($parse['query'],$params);
+            unset($params[$p]);
+            $url   =  $parse['path'].'?'.http_build_query($params);
+        }
+        //上下翻页字符串
+        $upRow   = $this->nowPage-1;
+        $downRow = $this->nowPage+1;
+        if ($upRow>0){
+            $upPage="<a href='".$url."&".$p."=$upRow'>".$this->config['prev']."</a>";
+        }else{
+            $upPage="";
+        }
 
-		$pre_page = $this->nowPage-1;
-		$next_page = $this->nowPage +1;
-		
-		if($this->nowPage >=$this->totalPages){
-			$next_page =  $this->nowPage = $this->totalPages;
-		}
-		if($this->nowPage <= 1){
-			$pre_page =  $this->nowPage = 1;
-		}
-
-		$output = '';
-		$output .= '<a class="a1">'.$this->totalRows.L('page_item').'</a>';
-		$output .= '<a href="'.$this->pageurl($urlrule, 1,$this->parameter).'">'.L('first_page').'</a>';
-		$output .= '<a href="'.$this->pageurl($urlrule, $pre_page,$this->parameter).'">'.L('previous').'</a>';
-		$show_nums = $this->rollPage*2+1;// 显示页码的个数
-	
-		if($this->totalPages <= $show_nums){
-			for($i = 1;$i<=$this->totalPages;$i++){
-				if($i == $this->nowPage){
-					$output .= '<span>'.$i.'</span>';
-				}else{
-					$output .= '<a href="'.$this->pageurl($urlrule,$i,$this->parameter).'">'.$i.'</a>';
-				}
-			}
-		}else{
-			if($this->nowPage < (1+$this->rollPage)){
-				for($i = 1;$i<=$show_nums;$i++){
-					if($i == $this->nowPage){
-						$output .=  '<span>'.$i.'</span>';
-					}else{
-						$output .= '<a href="'.$this->pageurl($urlrule,$i,$this->parameter).'">'.$i.'</a>';
-					}
-				}			
-			}else if($this->nowPage >= ($this->totalPages - $this->rollPage)){
-				for($i = $this->totalPages - $show_nums ; $i <= $this->totalPages ; $i++){
-					if($i == $this->nowPage){
-						$output .=  '<span>'.$i.'</span>';
-					}else{
-						$output .= '<a href="'.$this->pageurl($urlrule,$i,$this->parameter).'">'.$i.'</a>';
-					}
-				}
-			}else{
-				$start_page = $this->nowPage - $this->rollPage;
-				$end_page = $this->nowPage + $this->rollPage;
-				for($i = $start_page ; $i<=$end_page ; $i++){
-					if($i == $this->nowPage){
-						$output .=  '<span>'.$i.'</span>';
-					}else{
-						$output .= '<a href="'.$this->pageurl($urlrule,$i,$this->parameter).'">'.$i.'</a>';
-					}
-				}
-			}
-		}
-		
-		$output .='<a href="'.$this->pageurl($urlrule,$next_page,$this->parameter).'">'.L('next')."</a>"; 
-		$output .='<a href="'.$this->pageurl($urlrule,$this->totalPages,$this->parameter).'">'.L('Last_page')."</a>";
-		return $output;
-	}
-
-	public function pageurl($urlrule, $page, $array = array())
-	{
-		@extract($array, EXTR_SKIP);
-		if(is_array($urlrule))
-		{
-			//$urlrules = explode('|', $urlrule);
-			$urlrule = $page < 2 ? $urlrule[0] : $urlrule[1];
-		}
-		$url = str_replace('{$page}', $page, $urlrule);
-		return $url;
-	}
+        if ($downRow <= $this->totalPages){
+            $downPage="<a href='".$url."&".$p."=$downRow'>".$this->config['next']."</a>";
+        }else{
+            $downPage="";
+        }
+        // << < > >>
+        if($nowCoolPage == 1){
+            $theFirst = "";
+            $prePage = "";
+        }else{
+            $preRow =  $this->nowPage-$this->rollPage;
+            $prePage = "<a href='".$url."&".$p."=$preRow' >上".$this->rollPage."页</a>";
+            $theFirst = "<a href='".$url."&".$p."=1' >".$this->config['first']."</a>";
+        }
+        if($nowCoolPage == $this->coolPages){
+            $nextPage = "";
+            $theEnd="";
+        }else{
+            $nextRow = $this->nowPage+$this->rollPage;
+            $theEndRow = $this->totalPages;
+            $nextPage = "<a href='".$url."&".$p."=$nextRow' >下".$this->rollPage."页</a>";
+            $theEnd = "<a href='".$url."&".$p."=$theEndRow' >".$this->config['last']."</a>";
+        }
+        // 1 2 3 4 5
+        $linkPage = "";
+        for($i=1;$i<=$this->rollPage;$i++){
+            $page=($nowCoolPage-1)*$this->rollPage+$i;
+            if($page!=$this->nowPage){
+                if($page<=$this->totalPages){
+                    $linkPage .= "&nbsp;<a href='".$url."&".$p."=$page'>&nbsp;".$page."&nbsp;</a>";
+                }else{
+                    break;
+                }
+            }else{
+                if($this->totalPages != 1){
+                    $linkPage .= "&nbsp;<span class='cur'>".$page."</span>";
+                }
+            }
+        }
+        $pageStr	 =	 str_replace(
+            array('%header%','%nowPage%','%totalRow%','%totalPage%','%upPage%','%downPage%','%first%','%prePage%','%linkPage%','%nextPage%','%end%'),
+            array($this->config['header'],$this->nowPage,$this->totalRows,$this->totalPages,$upPage,$downPage,$theFirst,$prePage,$linkPage,$nextPage,$theEnd),$this->config['theme']);
+        return $pageStr;
+    }
 
 }
-?>

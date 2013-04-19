@@ -1,6 +1,6 @@
 html, body, span, div, p, a, table, tbody, td, h1, h2, h3, h4, h5, h6, img, form, font, strong, b, i, dl, dt, dd, ol, ul, li, dl, dd, dt, iframe, label, blockquote, input, button {padding:0; margin:0;list-style: none;}
 
-body {line-height:22px;font-size:12px;font-family:arial,"\5B8B\4F53";color:#666;background:#fff;-webkit-text-size-adjust:none;}
+body {line-height:22px;font-size:12px;font-family:"微软雅黑",arial,"\5B8B\4F53";color:#666;background:#fff;-webkit-text-size-adjust:none;}
 
 img {vertical-align:middle; border:none;}
 a {color:#666;text-decoration:none;outline:none;blr:expression(this.onFocus=this.blur());}
@@ -248,3 +248,82 @@ opacity: 0.6;
 #file_win{ width:480px;}
 #brand_win,#logo_win,#phone_win{ width:850px;}
 #mask{ position:absolute; top:0; left:0; background:url(../images/mask.png) repeat 0 0; z-index:100;/*fliter:alpha(opacity:30);-moz-opacity:0.3;opacity:0.3;*/}
+
+#subnavigation{ height: 36px; line-height: 33px; border-bottom: 1px solid #b9bdc2;}
+#subnavigation .ddsmoothmenu{ width: 950px; margin: 0 auto; float: none;}
+#subnavigation .ddsmoothmenu ul li a{ font-weight: normal; font-size: 12px;}
+#subnavigation .ddsmoothmenu ul li a.selected,#subnavigation .ddsmoothmenu ul li a:hover{ background:none;color: #398ffa;}
+
+.product_padding{
+	padding:0;
+}
+.product-list{overflow: hidden;}
+.product-list ul{}
+.product-list li {
+	zoom:1;
+	padding: 15px 0;
+        float: left;
+}
+.product-list h4 {
+	font-size: 14px;
+	font-weight: normal;
+	margin-bottom: 2px;
+}
+.product-list .img {background: url(../images/pic_bg.jpg) no-repeat;  margin: 0 18px; overflow: hidden; padding: 13px 0 0 13px; width: 187px; height: 187px;}
+.product-list .img img {
+	height: 173px;
+	vertical-align: middle;
+	width: 173px;
+}
+.product-list .cnt {
+	text-align: center; line-height: 42px;
+}
+
+/*分页*/
+.manu .cur {
+BORDER-RIGHT: #036cb4 1px solid;
+PADDING-RIGHT: 5px;
+BORDER-TOP: #036cb4 1px solid;
+PADDING-LEFT: 5px;
+FONT-WEIGHT: bold;
+PADDING-BOTTOM: 2px;
+MARGIN: 2px;
+BORDER-LEFT: #036cb4 1px solid;
+COLOR: #fff;
+PADDING-TOP: 2px;
+BORDER-BOTTOM: #036cb4 1px solid;
+BACKGROUND-COLOR: #036cb4;
+}
+.manu a {
+BORDER-RIGHT: #eee 1px solid;
+PADDING-RIGHT: 5px;
+BORDER-TOP: #eee 1px solid;
+PADDING-LEFT: 5px;
+PADDING-BOTTOM: 2px;
+MARGIN: 2px;
+BORDER-LEFT: #eee 1px solid;
+COLOR: #036cb4;
+PADDING-TOP: 2px;
+BORDER-BOTTOM: #eee 1px solid;
+TEXT-DECORATION: none;
+}
+.manu a:hover {
+BORDER-RIGHT: #999 1px solid;
+BORDER-TOP: #999 1px solid;
+BORDER-LEFT: #999 1px solid;
+COLOR: #666;
+BORDER-BOTTOM: #999 1px solid;
+}
+
+.product_content{
+    background: url(../images/ap_bg.jpg) no-repeat; width: 950px; height: 280px; margin-top: 15px;
+}
+.w304{ width: 304px; margin-left: 27px; _margin_left:15px; margin-top: 9px;}
+.w588{ width: 588px;}
+.action_title{font-size: 14px;  line-height: 50px;}
+.action_date{font-size: 14px;  line-height: 50px; border-bottom: 1px solid #eee ; height: 45px;}
+.action_info{ padding-top: 10px; overflow: hidden;}
+.pro_info{padding-top: 15px; width: 264px;}
+.pro_info span{line-height: 26px; }
+.donwload{padding-top: 10px;}
+.donwload h2{font-size: 14px;}

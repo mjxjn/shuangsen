@@ -1,0 +1,97 @@
+<link rel="stylesheet" type="text/css" href="../Public/css/ss.css" />
+<div id="subnavigation">
+    <div id="smoothmenu1" class="ddsmoothmenu">
+        <YP:nav  catid="4" level="2"  home="0" />
+    </div>
+</div>
+<div class="clear"></div>
+<div class="container_bg">
+    <div class="container">
+        <div class="subnav clearfix" style="padding-bottom:12px; border-bottom: 1px #d2d2d2 dashed ">
+            <a href="{:URL()}" class="navs">{:L(home_font)}</a> &gt <YP:catpos  catid="catid" space=" &gt; " />
+        </div>
+        
+        <div class="product_content">
+            <div class="fr w588">
+                <p class="action_title">产品名称：{$title}</p>
+                <!-- Baidu Button BEGIN -->
+    <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+        <a class="bds_qzone"></a>
+        <a class="bds_tsina"></a>
+        <a class="bds_tqq"></a>
+        <a class="bds_tqf"></a>
+        <a class="bds_kaixin001"></a>
+        <a class="bds_renren"></a>
+        <a class="bds_douban"></a>
+        <a class="bds_baidu"></a>
+        <a class="bds_taobao"></a>
+        
+        <a class="bds_ty"></a>
+        <a class="bds_zx"></a>
+    </div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=19961" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?t=" + new Date().getHours();
+</script>
+<!-- Baidu Button END -->
+<div class="clear"></div>
+                <div class="action_info">
+                    <p class="fl pro_info">
+                        <span>商品品牌：{$catname}</span><br />
+                        <span>商品条码：{$goods_number}</span><br />
+                        <span>商品规格：{$goods_format}</span><br />
+                        <span>适用年龄：{$age}</span><br />
+                        <span>商品包装：{$box}</span>
+                    </p>
+                    <div class="fr donwload">
+                        <h2>产品质量安全检验报告</h2>
+                        <img src="../Public/images/ico_anquan.jpg" width="302" height="41" />
+                        <p>产品已通过国家质量安全检验</p>
+                        <p><a href="__ROOT__/index.php?m={$module_name}&a=down&id={$id}"><img src="../Public/images/download.jpg" height="41" width="202" border="0" /></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="fl w304">
+                <img src="{$thumb}" width="304" height="238" border="0" />
+            </div>
+        </div>
+        
+        
+    </div>
+    <div class="container">
+        <div class="produt_l fl w745">
+            
+        </div>
+        <div class="produt_r fr w200">
+            
+        </div>
+    </div>
+</div>
+
+<div class="left">
+		<div class="pos"><b></b><span>{:L(catpos)} <a href="{:URL()}">{:L(home_font)}</a> &gt <YP:catpos  catid="catid" space=" &gt; " /></span></div>
+		<div id="content">
+		<h1 class="tit">{$title}</h1>
+ 
+		<div class="down_info"><ul>
+		<li><label>{:L(Down_size)}:</label>{$size}</li>
+		<li><label>{:L(Down_ext)}:</label>{$ext}</li>
+		<li><label>{:L(Down_hits)}:</label><span id="hits">&nbsp;</span>{:L(ci)}</li>
+		<li><label>{:L(Down_download)}:</label><span id="downs">&nbsp;</span>{:L(ci)}</li>
+		<li><label>{:L(Down_url)}:</label><a href="__ROOT__/index.php?m={$module_name}&a=down&id={$id}">{:L(Download)}</a></li>
+		<li><label>{:L(Down_time)}:</label>{$createtime|toDate=###,'Y-m-d'}</li>
+		</ul></div>
+		<div class="h10"></div>
+		<div class="p_tabs"><ul><li>{:L(Down_desc)}</li></ul></div>
+		<div class="h10"></div>
+
+		<div class="content">
+		{$content}
+		</div>
+		</div>
+		<br>
+</div>
+ 
+
+<script language="JavaScript" src="__ROOT__/index.php?m={$module_name}&a=hits&id={$id}"></script>

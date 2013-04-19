@@ -1,0 +1,37 @@
+<link rel="stylesheet" type="text/css" href="../Public/css/ss.css" />
+<div class="container_bg">
+    <div class="container">
+        <div class="subnav clearfix" style="padding-bottom:12px; border-bottom: 1px #d2d2d2 dashed ">
+            <a href="{:URL()}" class="navs">{:L(home_font)}</a> &gt <YP:catpos  catid="catid" space=" &gt; " />
+        </div>
+        
+        <div class="product_padding">
+
+            <div class="w960" style="height: auto; overflow: hidden;">
+                <div class="breadcrumb"></div>
+                <!-- quad -->
+                <div class="news-list">
+                    
+                        <volist name="list" id="r">
+                            <div class="product_content">
+                                <div class="fr w588">
+                                    <p class="action_title">活动名称：{$r.title}</p>
+                                    <p class="action_date">活动时间：{$r.startdate|toDate=###,'Y年m月d日'}~{$r.enddate|toDate=###,'Y年m月d日'}</p>
+                                    <p class="action_info">{$r.content}</p>
+                                </div>
+                                <div class="fl w304">
+                                    <img src="{$r.thumb}" width="304" height="238" border="0" />
+                                </div>
+                            </div>
+                        </volist> 
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="page">
+            {$pages}
+        </div>
+
+    </div>
+</div>

@@ -280,7 +280,7 @@ class BaseAction extends Action
 		$this->assign ('seo_keywords',$data['keywords']);
 		$this->assign ('seo_description',$data['description']);
 		$this->assign ( 'fields', F($cat['moduleid'].'_Field') ); 
-		
+		$this->assign ('catname',$cat['catname']);
 
 		$fields = F($this->mod[$module].'_Field');
 		foreach($data as $key=>$c_d){
