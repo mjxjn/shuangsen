@@ -323,7 +323,17 @@ BORDER-BOTTOM: #999 1px solid;
 .action_title{font-size: 14px;  line-height: 50px;}
 .action_date{font-size: 14px;  line-height: 50px; border-bottom: 1px solid #eee ; height: 45px;}
 .action_info{ padding-top: 10px; overflow: hidden;}
-.pro_info{padding-top: 15px; width: 264px;}
+.pro_info{padding-top: 15px; width: 263px;}
 .pro_info span{line-height: 26px; }
 .donwload{padding-top: 10px;}
 .donwload h2{font-size: 14px;}
+
+.w745{width:745px;}
+.produt_l{overflow: hidden; width: 703px; border: 1px solid #d3d3d3; background: #fff; margin-top: 20px; padding: 15px 20px}
+.w200{width:200px;}
+.produt_r{overflow: hidden; margin-top: 20px;}
+.produt_r h2{font-size: 14px; padding-left: 10px;}
+.pro_img{background: url(../images/pro_bg.gif) no-repeat; width: 90px; height: 80px;}
+.pro_img img{margin: 8px;_margin:8px 4px;}
+.pro_tit{width: 100px;}
+.pro_list{margin-top: 10px; margin-left: 10px; clear: both;}

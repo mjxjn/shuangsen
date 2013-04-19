@@ -61,37 +61,20 @@
     </div>
     <div class="container">
         <div class="produt_l fl w745">
-            
+            {$content}
         </div>
         <div class="produt_r fr w200">
-            
+            <h2>你可能还会对这些产品感兴趣</h2>
+            <div class="pro_list">
+                <p class="pro_img fl"><a href=""><img src="" height="64" width="64" border="0" /></a></p>
+                <p class="pro_tit fr">
+                    <a href="">来费你俩的靓女</a>
+                    524 人关注
+                </p>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="left">
-		<div class="pos"><b></b><span>{:L(catpos)} <a href="{:URL()}">{:L(home_font)}</a> &gt <YP:catpos  catid="catid" space=" &gt; " /></span></div>
-		<div id="content">
-		<h1 class="tit">{$title}</h1>
- 
-		<div class="down_info"><ul>
-		<li><label>{:L(Down_size)}:</label>{$size}</li>
-		<li><label>{:L(Down_ext)}:</label>{$ext}</li>
-		<li><label>{:L(Down_hits)}:</label><span id="hits">&nbsp;</span>{:L(ci)}</li>
-		<li><label>{:L(Down_download)}:</label><span id="downs">&nbsp;</span>{:L(ci)}</li>
-		<li><label>{:L(Down_url)}:</label><a href="__ROOT__/index.php?m={$module_name}&a=down&id={$id}">{:L(Download)}</a></li>
-		<li><label>{:L(Down_time)}:</label>{$createtime|toDate=###,'Y-m-d'}</li>
-		</ul></div>
-		<div class="h10"></div>
-		<div class="p_tabs"><ul><li>{:L(Down_desc)}</li></ul></div>
-		<div class="h10"></div>
-
-		<div class="content">
-		{$content}
-		</div>
-		</div>
-		<br>
-</div>
- 
 
 <script language="JavaScript" src="__ROOT__/index.php?m={$module_name}&a=hits&id={$id}"></script>
