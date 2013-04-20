@@ -65,13 +65,16 @@
         </div>
         <div class="produt_r fr w200">
             <h2>你可能还会对这些产品感兴趣</h2>
+            <YP:list name="Download" order="id desc" catid="catid" where=" id != $id" limit="5">
             <div class="pro_list">
-                <p class="pro_img fl"><a href=""><img src="" height="64" width="64" border="0" /></a></p>
+                <p class="pro_img fl"><a href="{$r.url}"><img src="{$r.thumb}" height="64" width="64" border="0" /></a></p>
                 <p class="pro_tit fr">
-                    <a href="">来费你俩的靓女</a>
-                    524 人关注
+                    <a href="{$r.url}">{$r.title}</a><br />
+                    {$r.hits} 人关注
                 </p>
             </div>
+                <div class="clear"></div>
+            </YP:list>
         </div>
     </div>
 </div>

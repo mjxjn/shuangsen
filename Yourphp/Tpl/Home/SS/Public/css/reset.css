@@ -194,7 +194,7 @@ opacity: 0.6;
 /*-- 网站地图 --*/
 #web_map_bg{ border-top:1px solid #ededed; background:#fff url(../images/web_map_bg.jpg) repeat-x 0 0; width:100%; overflow:hidden; display:none;}
 #web_map,.w950{ width:950px; margin:0 auto;}
-.w950{ height:0; font-size:0; line-height:0;position:relative;}
+.w950{ width:950px; height:0; font-size:0; line-height:0;position:relative;}
 #web_map dl{ width:12.3%; float:left; margin:15px 0;}
 #web_map dt{ height:28px; font-weight:bold; line-height:28px; color:#999;}
 #web_map a{ color:#999999;}
@@ -337,3 +337,23 @@ BORDER-BOTTOM: #999 1px solid;
 .pro_img img{margin: 8px;_margin:8px 4px;}
 .pro_tit{width: 100px;}
 .pro_list{margin-top: 10px; margin-left: 10px; clear: both;}
+
+.sangle{border: 1px solid #d3d3d3; background: #fff;margin-top: 20px; }
+.page_nav{width: 930px; margin: 0 auto; border-bottom: 1px solid #ededed; overflow: hidden; height: 45px;}
+.sangle li{float: left; margin: 10px 20px 0px; position: relative; display: inline;}
+.sangle a{font-size: 14px; color: #1492d3;}
+
+.sangle_pic{background: url(../images/long_picbg.jpg) no-repeat; width: 917px; height: 181px; margin: 10px auto; padding: 15px 6px;}
+.sangle ul li.sel {
+background: url(../images/nav_cur.jpg) no-repeat 50% 100%;height: 35px;
+}
+.sangle_content{margin-top: 10px;}
+.sangle_content .content{padding: 0 20px;}
+
+.kefu {width:99px;height:60px;position:absolute;top:0px;}
+.kefu .kftop{background:url(../images/kefu_top.gif) no-repeat;height:20px;}
+.kefu .kfbottom{background:url(../images/kefu_bottom.gif) no-repeat;height:14px;}
+.kefu .kfbox {border-left:1px solid #DDE6EC;border-right:1px solid  #DDE6EC;overflow:hidden;zoom:1;padding:1px;background:#FFF;color:#D3D3D3;line-height:26px;}
+.kefu .kfbox ul {padding-left:6px;}
+.kefu .kfbox ul li.tit {color:#800000;}
+.kefu .kfbox ul li img {vertical-align:middle;}

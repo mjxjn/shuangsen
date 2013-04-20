@@ -5,10 +5,12 @@
   <!-- 网站地图 -->
 
   <div id="footer">
-    <p>{$site_name} 版权所有&nbsp;&nbsp;&nbsp;&nbsp;{$site_address}<br/>{$beian}</p>
+    <yp:block pos="footer" />
   </div>
 </div>
-
+{if $Module[9]['status']}
+<YP:kefu id="kefu" left="-10" top="180" />
+{/if}
 <script type="text/javascript" src="/Public/Js/jquery.min.js"></script>
 <script type="text/javascript" src="../Public/js/ddsmoothmenu.js"></script>
 

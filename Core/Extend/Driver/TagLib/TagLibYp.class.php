@@ -461,7 +461,7 @@ class TagLibYp extends TagLib
 				$sql='';
 				$module = $tag['name'];
 				$order  = isset($tag['order'])?$tag['order']:'id desc';
-				$field  = isset($tag['field'])?$tag['field']:'id,catid,url,title,title_style,keywords,description,thumb,createtime';
+				$field  = isset($tag['field'])?$tag['field']:'id,catid,url,title,title_style,keywords,description,thumb,createtime,hits';
 				$where  = isset($tag['where'])?$tag['where']: ' 1 ';
 				$limit  = isset($tag['limit'])?$tag['limit']: '10';
 				$status = isset($tag['status'])? intval($tag['status']) : '1';

@@ -14,7 +14,7 @@
       <h3>{$Categorys[$T[m_news_catid]]['catname']}</h3>
       <YP:list name="Article" order="id desc" catid="T[m_news_catid]" limit="1">
       <dl>
-          <dt><a href="{$r.url}" target="_blank"><img src="{$r.thumb}" width="200" height="110" alt="{$r.title}"/></a></dt>
+          <dt><a href="{$r.url}" target="_blank"><img src="{$r.thumb}" width="190" height="100" alt="{$r.title}"/></a></dt>
         <dd><strong><a title="{$r.title}" href="{$r.url}" target="_blank">{$r.title}</a></strong>
           <p class="gray">{$r.createtime|MDate=###}</p>
           <p>{$r.description}</p>
@@ -36,7 +36,7 @@
       <h3>{$Categorys[$T[m_action_catid]]['catname']}</h3>
       <YP:list name="Article" order="id desc" catid="T[m_action_catid]" limit="1">
       <dl>
-        <dt><a href="{$r.url}" target="_blank"><img src="{$r.thumb}" width="200" height="110" alt="{$r.title}"/></a></dt>
+        <dt><a href="{$r.url}" target="_blank"><img src="{$r.thumb}" width="190" height="100" alt="{$r.title}"/></a></dt>
         <dd><strong><a title="{$r.title}" href="{$r.url}" target="_blank">{$r.title}</a></strong>
           <p class="gray">{$r.createtime|MDate=###}</p>
           <p>{$r.description}</p>

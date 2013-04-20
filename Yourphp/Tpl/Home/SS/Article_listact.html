@@ -7,7 +7,7 @@
         
         <div class="product_padding">
 
-            <div class="w960" style="height: auto; overflow: hidden;">
+            <div class="w950" style="height: auto; overflow: hidden;">
                 <div class="breadcrumb"></div>
                 <!-- quad -->
                 <div class="news-list">
@@ -15,12 +15,12 @@
                         <volist name="list" id="r">
                             <div class="product_content">
                                 <div class="fr w588">
-                                    <p class="action_title">活动名称：{$r.title}</p>
+                                    <p class="action_title">活动名称：<a href='{$r.url}' target="_blank">{$r.title}</a></p>
                                     <p class="action_date">活动时间：{$r.startdate|toDate=###,'Y年m月d日'}~{$r.enddate|toDate=###,'Y年m月d日'}</p>
                                     <p class="action_info">{$r.content}</p>
                                 </div>
                                 <div class="fl w304">
-                                    <img src="{$r.thumb}" width="304" height="238" border="0" />
+                                    <a href='{$r.url}' target="_blank"><img src="{$r.thumb}" width="304" height="238" border="0" /></a>
                                 </div>
                             </div>
                         </volist> 
