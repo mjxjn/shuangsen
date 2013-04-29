@@ -357,3 +357,18 @@ background: url(../images/nav_cur.jpg) no-repeat 50% 100%;height: 35px;
 .kefu .kfbox ul {padding-left:6px;}
 .kefu .kfbox ul li.tit {color:#800000;}
 .kefu .kfbox ul li img {vertical-align:middle;}
+
+/*历程*/
+.pic_l {
+margin: 10px 25px;
+}
+.pic_l li {
+background: url(../images/bgl.gif) repeat-y top left;
+padding-left: 50px;
+line-height: 58px;
+line-height: 59pxurl(0);
+_padding-top: 1px;
+font-size: 14px;
+float: none;
+display: block;
+}
