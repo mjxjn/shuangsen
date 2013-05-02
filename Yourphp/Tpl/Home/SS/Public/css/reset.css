@@ -372,3 +372,9 @@ font-size: 14px;
 float: none;
 display: block;
 }
+
+
+
+.sangle_content_1{margin-top: 10px; }
+.sangle_content_1 .sangle_pic_1{width: 533px; height: 181px; margin: 10px auto; padding: 15px 6px; float: left;}
+.sangle_content_1 .content{padding: 0 20px; width: 350px; float: left}

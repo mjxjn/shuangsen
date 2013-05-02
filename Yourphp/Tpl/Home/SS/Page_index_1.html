@@ -1,0 +1,30 @@
+<link rel="stylesheet" type="text/css" href="../Public/css/ss.css" />
+<div class="container_bg">
+    <div class="container">
+        <div class="subnav clearfix" style="padding-bottom:12px; border-bottom: 1px #d2d2d2 dashed ">
+            <a href="{:URL()}" class="navs">{:L(home_font)}</a> &gt <YP:catpos  catid="catid" space=" &gt; " />
+        </div>
+        
+        <div class="product_padding">
+            <div class="w950 sangle" style="height: auto; overflow: hidden; line-height: 180%; font-size: 14px;">
+                <div class="page_nav" id="pnav">
+                <YP:nav  catid="8" level="0"  home="0" />
+                </div>
+                <div class="sangle_content_1">
+                    <div class="content">{$content}</div>
+                    <div class="sangle_pic_1">
+                        <img src="{$thumb}" border="0" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+var APP	 =	 '__APP__';
+var ROOT =	 '__ROOT__';
+var PUBLIC = '__PUBLIC__';
+yourphpnav.init({navid: "pnav"});
+var nav = document.getElementById('nav_{$catid}');
+nav.className=nav.className+" sel";
+</script>

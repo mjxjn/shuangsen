@@ -53,7 +53,7 @@ class ConfigAction extends AdminbaseAction {
 		$this->assign('yesorno',array(0 => L('no'),1  => L('yes')));
 		$this->assign('openarr',array(0 => L('close_select'),1  => L('open_select')));
 		$this->assign('enablearr',array(0 => L('disable'),1  => L('enable')));
-		$this->assign('urlmodelarr',array(0 => L('URL_MODEL0').'(m=module&a=action&id=1)',1  => L('URL_MODEL1').'(index.php/Index_index_id_1)',2 => L('URL_MODEL2').'(Index_index_id_1)'));
+		$this->assign('urlmodelarr',array(0 => L('URL_MODEL0').'(m=module&a=action&id=1)',1  => L('URL_MODEL1').'(index.php/Index_index_id_1)',2 => L('URL_MODEL2').'(Index_index_id_1)',3 => L('URL_MODEL3').'(Index_index_id_1)'));
 		$this->assign('readtypearr', array(0=>'readfile',1=> 'redirect'));
 		$this->assign($sysconfig);
 		$this->display();

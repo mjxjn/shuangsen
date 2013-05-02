@@ -23,7 +23,8 @@ $config	= array(
 		'VAR_PAGE' => 'p',
 		'LAYOUT_HOME_ON'=>$sys_config['LAYOUT_ON'],
 		'URL_ROUTE_RULES' => $RULES,
-		'TMPL_EXCEPTION_FILE' => APP_PATH.'/Tpl/Home/Default/Public/exception.html'
+		'TMPL_EXCEPTION_FILE' => APP_PATH.'/Tpl/Home/Default/Public/exception.html',
+                'SHOW_PAGE_TRACE'           =>  true,//显示调试信息
 );
 return array_merge($database, $config ,$sys_config);
 ?>
