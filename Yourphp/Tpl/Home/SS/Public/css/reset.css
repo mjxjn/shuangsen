@@ -135,6 +135,7 @@ opacity: 0.6;
 /* -- 内容框架 -- */
 .container_bg{ background:url(../images/container_bg.jpg) #F2F2F2 repeat-x 0 0; padding-bottom: 25px}
 .container{ width:950px; margin:0 auto 25px;}
+.content_title{font-weight: bold; font-size: 14px;}
 
 /*--子导航--*/
 .subnav {padding: 14px 0; height: 23px;overflow: hidden;}
